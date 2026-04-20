@@ -1,0 +1,19 @@
+# Build artifacts: any executable file (no extension, no dot in name)
+# We keep only *.c, *.h, *.md, *.txt explicitly
+*
+!*/
+!*.c
+!*.h
+!*.md
+!*.txt
+!.gitignore
+
+# Debug symbols
+*.dSYM/
+
+# Editor
+.vscode/
+.DS_Store
+
+# Local Claude settings
+.claude/
