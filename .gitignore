@@ -6,6 +6,7 @@
 !*.h
 !*.md
 !*.txt
+!*.s
 !.gitignore
 
 # Debug symbols
