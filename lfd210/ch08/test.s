@@ -28,6 +28,11 @@ add:
 	addi	sp,sp,32
 	jr	ra
 	.size	add, .-add
+	.section	.rodata
+	.align	3
+.LC0:
+	.string	"%d + %d = %d"
+	.text
 	.align	1
 	.globl	main
 	.type	main, @function
@@ -41,6 +46,13 @@ main:
 	call	add
 	mv	a5,a0
 	sw	a5,-20(s0)
+	lw	a5,-20(s0)
+	mv	a3,a5
+	li	a2,4
+	li	a1,3
+	lui	a5,%hi(.LC0)
+	addi	a0,a5,%lo(.LC0)
+	call	printf
 	lw	a5,-20(s0)
 	mv	a0,a5
 	ld	ra,24(sp)
